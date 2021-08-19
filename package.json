@@ -1,0 +1,22 @@
+{
+  "name": "randomuser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "rollup --config --watch",
+    "build": "rollup --config --environment PROD && cp -r index.* templates/ assets/ build/ && sed -i 's#./build#.#g' build/index.html"
+  },
+  "keywords": [],
+  "author": "Gurish Sadhu",
+  "license": "ISC",
+  "dependencies": {
+    "alpine-router": "^0.1.2",
+    "alpinejs": "^3.2.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "rollup": "^2.56.2",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
