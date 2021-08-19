@@ -1,0 +1,29 @@
+<div class="liked">
+  <h2>
+    <p id="back" 
+      x-on:click="navigate('/')">
+      &#8592;
+    </p>
+    &nbsp;&nbsp;&nbsp;
+    Liked Users
+  </h2>
+  <div class="users">
+    <template x-if="likedCount === 0">
+      <div class="user" style="pointer-events: none">
+        <p>No liked users.</p>
+      </div>
+    </template>
+    <template x-show="likedCount !== 0" 
+      x-for="( usr , index ) in likedUsers">
+      <div 
+        x-bind:class="'user ' + usr.gender">
+        <img x-bind:src="usr.picture" x-bind:alt="usr.name"
+        x-on:click="showUser(usr.id)" />
+        <p x-text="usr.name"
+        x-on:click="showUser(usr.id)">
+        </p>
+        <span x-on:click="removeUser(usr.id)">&times;</span>
+      </div>
+    </template>
+  </div>
+</div>

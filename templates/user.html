@@ -1,0 +1,19 @@
+<div class="main">
+  <div x-bind:class="'circle ' + user.gender">
+    <img x-bind:src="user.picture" x-bind:alt="user.name" />
+    <p x-text="'Name : ' + user.name"></p>
+    <p x-text="'Email : ' + user.email"></p>
+    <p x-text="'Country : ' + user.country"></p>
+    <div class="buttons">
+      <button 
+        x-bind:class="user.gender"
+        x-on:click="getRandomUser">
+        Get Random User
+      </button>
+      <button 
+        x-on:click="likeThisUser">
+        Give a Like
+      </button>
+    </div>
+  </div>
+</div>
